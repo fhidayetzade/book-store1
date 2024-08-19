@@ -13,7 +13,7 @@ public class MapperDto {
         CategoryResponse categoryResp = CategoryResponse.builder()
                 .id(category.getId())
                 .name(category.getName())
-                .build();
+                .build(); //salam
         List<String> names = new ArrayList<>();
         List<Book> books = new ArrayList<>();
         for (Book book : books){

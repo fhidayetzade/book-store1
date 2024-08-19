@@ -28,6 +28,7 @@ public class ZipcodeServiceImpl implements ZipcodeService{
                 .build();
         if(zipcodeRequestDto.getCityId()==null){
           return   zipcodeRepository.save(zipcode);
+
         }
         Optional<City> cityOptional = cityRepository.findById(zipcodeRequestDto.getCityId());
         if(cityOptional.isPresent()){

@@ -29,7 +29,8 @@ public class CityServiceImpl implements CityService{
 
     @Override
     public City getCityById(Integer cityId) {
-         return cityRepository.findById(cityId).orElseThrow(()-> new IllegalArgumentException("city with cityId "+ cityId+ " could not be found"));
+         return cityRepository.findById(cityId).
+                 orElseThrow(()-> new IllegalArgumentException("city with cityId "+ cityId+ " could not be found"));
     }
 
     @Override
