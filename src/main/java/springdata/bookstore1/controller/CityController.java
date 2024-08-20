@@ -12,36 +12,45 @@ import java.util.List;
 @RestController
 @RequestMapping("/city")
 @AllArgsConstructor
-public class CityController {
+public class CityController 
+{
 
     private final CityServiceImpl cityService;
 
     @PostMapping("/add")
-    public void addCity(@RequestBody CityRequestDto cityRequestDto){
+    public void addCity(@RequestBody CityRequestDto cityRequestDto)
+    {
         cityService.addCity(cityRequestDto);
     }
 
     @GetMapping("/all")
-    public List<City> cities(){
+    public List<City> cities()
+    {
         return cityService.cities();
     }
 
     @GetMapping("/get/{id}")
-    public City cityBydId(@PathVariable final Integer id){
+    public City cityBydId(@PathVariable final Integer id)
+    {
         return cityService.getCityById(id);
     }
 
     @PostMapping("/update/{cityId}")
-    public City editCity(@RequestBody CityRequestDto cityRequestDto, @PathVariable Integer cityId){
+    public City editCity(@RequestBody CityRequestDto cityRequestDto, @PathVariable Integer cityId)
+    {
         return cityService.editCity(cityRequestDto,cityId);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteCity(@PathVariable Integer id){
-        try {
+    public ResponseEntity<Void> deleteCity(@PathVariable Integer id)
+    {
+        try 
+        {
             cityService.deleteCity(id);
             return ResponseEntity.noContent().build();
-        } catch (IllegalArgumentException e) {
+        } 
+        catch (IllegalArgumentException e) 
+        {
             return ResponseEntity.notFound().build();
         }
     }
