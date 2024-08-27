@@ -14,4 +14,5 @@ public class ZipcodeRequestDto {
     private Integer id;
     private String name;
     private Integer cityId;
+    private String x;
 }
